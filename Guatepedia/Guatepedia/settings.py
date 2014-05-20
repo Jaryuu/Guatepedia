@@ -23,6 +23,7 @@ SECRET_KEY = '81%wpv-!x(5$r1nj@x#q%sfr+&r7ia@^hn*a51r80!y4_50n+x'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = [os.path.join(BASE_DIR,'templates')]
 
 ALLOWED_HOSTS = []
 
