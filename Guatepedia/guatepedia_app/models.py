@@ -2,10 +2,11 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
-class Investigador(models.Model):
-    user = models.OneToOneField(User)
-    ## En futuro...
-    #investigacion = foreignKey(Investigacion)
-from django.db import models
+User._meta.get_field_by_name('email')[0]._unique = True
 
-# Create your models here.
+class Investigador(models.Model):
+    ##Esto incluye nombre,apellido,correo,password,fecha de creacion,y permisos de grupo
+    user = models.OneToOneField(User)
+
+    ## En futuro...(Next Scrum)
+    #investigacion = foreignKey(Investigacion)

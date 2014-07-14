@@ -10,12 +10,12 @@ class InvestigadorInline(admin.StackedInline):
     ##Para agregar mas campos al admin panel
     model = Investigador
     can_delete = False
-    verbose_name_plural = 'Investigador'
+    verbose_name_plural = 'Investigadores'
 
 # Define a new User admin
 class UserAdmin(UserAdmin):
     ##Descomentar para agregar nuevos campos al modelAdmin del Usuario
-   # inlines = (InvestigadorInline, ) ##Agregando los inlines al form
+    # inlines = (InvestigadorInline, ) ##Agregando los inlines al formulario
 
     def get_form(self, request, obj=None, **kwargs):
         ## Excluyendo la forma de permisos para que unicamente se manejen los grupo como permisos
