@@ -4,8 +4,9 @@ Guatepedia
 Sistema de enseñanza de historia de Guatemala
 Dependencias
 Python:
-  sort-thumbnails
-  django-tinymce
-  django-categories
-  django-tinymce-filebrowser
-  mysql-db
+  <br>sort-thumbnails
+  <br>django-tinymce
+  <br>django-categories
+  <br>django-tinymce-filebrowser
+  <br>mysql-db
+  <br>django-select2
