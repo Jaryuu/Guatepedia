@@ -13369,7 +13369,7 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 				font_size_legacy_values : 'xx-small,small,medium,large,x-large,xx-large,300%', // See: http://www.w3.org/TR/CSS2/fonts.html#propdef-font-size
 				apply_source_formatting : TRUE,
 				directionality : 'ltr',
-				forced_root_block : 'p',
+				forced_root_block : false,
 				hidden_input : TRUE,
 				padd_empty_editor : TRUE,
 				render_ui : TRUE,
@@ -18887,7 +18887,8 @@ tinymce.onAddEditor.add(function(tinymce, ed) {
 			// Setup range items and newBlockName
 			container = rng.startContainer;
 			offset = rng.startOffset;
-			newBlockName = (settings.force_p_newlines ? 'p' : '') || settings.forced_root_block;
+			newBlockName = (settings.force_p_newlines ? 'p' : '') || settings.
+            ;
 			newBlockName = newBlockName ? newBlockName.toUpperCase() : '';
 			documentMode = dom.doc.documentMode;
 			shiftKey = evt.shiftKey;

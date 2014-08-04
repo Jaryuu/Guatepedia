@@ -12,6 +12,7 @@ DEFAULT_CONFIG = {
    'theme_advanced_buttons3' : "",
    'theme_advanced_resizing' : 'true',
    'file_browser_callback': 'mce_filebrowser',
+   'plugins' : "advimage",
 }
 
 USE_SPELLCHECKER = getattr(settings, 'TINYMCE_SPELLCHECKER', False)

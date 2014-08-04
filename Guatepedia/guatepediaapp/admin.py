@@ -51,12 +51,21 @@ class InvestigacionAdmin(MCEFilebrowserAdmin):
     def is_investigador(self,request):
         return request.user.groups.filter(name='Investigadores')
 
+    #Metodo filtra las investigaciones para mostrar unicamente las que son del autor
     def queryset(self,request):
         qs = Investigacion.objects.all()
         if request.user.is_superuser:
             return qs
         else:
             return qs.filter(autor=request.user)
+    #Metodo para seleccionar autmaticamente el autor de la investgacion que se crea
+
+    #def formfield_for_manytomany(self, db_field, request=None, **kwargs):
+    #    if db_field.name == 'autor':
+    #        kwargs['initial'] = request.user.id
+    #    return super(InvestigacionAdmin, self).formfield_for_manytomany( db_field, request, **kwargs)
+
+
 
 class InvestigacionPendienteAdmin(admin.ModelAdmin):
     pass

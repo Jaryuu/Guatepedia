@@ -20,7 +20,6 @@ def investigacion(request,nombre_investigacion_url):
 #Cambia el estado de la investigacion a pendiente de aprobacion
 def solicitar_aprobacion(request,id):
     context = RequestContext(request)
-
     if(request.method=='GET'):
         #Obteniendo Investigacion en base a la id
         try:
