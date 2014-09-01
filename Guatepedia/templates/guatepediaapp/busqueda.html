@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>Guatepedia- Buscar</h1>
+    <title>Buscar</title>
+
+</head>
+<body>
+    <form method="post" id="search_form" action="/guatepedia/buscar/">
+        {% csrf_token %}
+
+        <input type="text" size="50" name="param" value= "" id="param"/>
+        <input type="submit" name="submit" value="Buscar" />
+    </form>
+
+|   <form action="{% url 'watson:search' %}">
+        <input name="q" value="{{request.GET.q}}">
+        <input type="submit" value="Go">
+    </form>
+    {% if results %}
+    <ul>
+        {% for result in results %}
+            <li>
+                <article>
+                    <h1>
+                        {% if result.url %}<a href="{{result.url}}">{% endif %}
+                        {% if result.url %}</a>{% endif %}
+                        {{ result.object.titulo  }}
+                    </h1>
+                    {% if result.description %}
+                        <p>{{result.description}}</p>
+                    {% endif %}
+                </article>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+</body>
+</html>
