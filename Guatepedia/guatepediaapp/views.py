@@ -8,12 +8,26 @@ from models import Investigacion
 
 def index(request):
     context = RequestContext(request)
+    response = "Hello, world. You're at the polls index."
+    return HttpResponse(response)
+
+def home(request):
+    return HttpResponse("Homepage")
 
 def investigacion(request,nombre_investigacion_url):
     context = RequestContext(request)
     #Sutituyendo _con espacios para construir la investigacion
     nombre_investigacion = nombre_investigacion_url.replace('_',' ')
     investigacion = Investigacion.objects.get(nombre)
+
+def mostrarInvestigacion(request,id):
+    context = RequestContext(request)
+    inv=None
+    try:
+            inv = Investigacion.objects.get(pk=id)
+    except Investigacion.DoesNotExist:
+        pass
+    return HttpResponse(inv)
 
 
 # Vista para solicitar aprobacion de investigacion

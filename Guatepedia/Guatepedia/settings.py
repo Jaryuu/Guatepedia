@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'guatepediaapp',
+    'guatepidia',
     'tinymce',
     'categories',
     'categories.editor',
@@ -86,7 +87,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'es-ar'
+LANGUAGE_CODE = 'es-gt'
 
 TIME_ZONE = 'UTC'
 
